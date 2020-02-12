@@ -1,0 +1,49 @@
+<p>foo works!</p>
+
+
+<button (click)="onSave()">Save</button>
+<button (click)="onSave2($event)">Save2</button>
+<button (click)="onSave3($event,123)">Save3</button>
+
+<p>{{ message }}</p>
+<input type="text" [(ngModel)]="message">
+
+
+<input type="radio" [value]="0" [(ngModel)]="gender"> 男
+<input type="radio" [value]="1" [(ngModel)]="gender"> 女
+<p>选中了：{{ gender }}</p>
+
+<select [(ngModel)]="hobby">
+    <option [value]="0">吃饭</option>
+    <option [value]="1">睡觉</option>
+    <option [value]="2">打豆豆</option>
+</select>
+<p>选中的爱好：{{ hobby }}</p>
+
+<p class="big bold red">p文字</p>
+
+<p [class]="big">p文字2</p>
+<p [class]="{'big':true}">p文字3</p>
+
+<div [class.red]="true">The class binding is special</div>
+
+<p [class]="['big','bold']">p文字4</p>
+
+<p [ngClass]="{'red':true,'bold':true}">啦啦啦啦</p>
+
+<button [style.background-color]="true ? 'cyan': 'grey'">Save</button>
+
+<button [style.font-size.em]="true ? 3 : 1">Big</button>
+<button [style.font-size.%]="true ? 150 : 50">Small</button>
+
+
+<h1>{{currentTime | date:'yyyy-MM-dd HH:mm:ss'}}</h1>
+<h1>{{123 | currency }}</h1>
+<h1>{{123 | currency:'￥' }} </h1>
+
+
+<h1>{{{name:'jack'} | json}}</h1>
+<h1>{{ 'Hello' | uppercase  }}</h1>
+<h1>{{'Hello' | lowercase}}</h1>
+
+<h1>{{'zhangsan' | msgformat}}</h1>

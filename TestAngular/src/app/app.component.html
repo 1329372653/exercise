@@ -1,0 +1,13 @@
+<div class="content" role="main">
+  <span>{{ title }} app is running!</span>
+  <span>{{ count }}</span>
+  <button (click)="increment()">点我加1</button>
+  <app-foo></app-foo>
+  <app-login></app-login>
+
+  <p appHighlight>appHighlight</p>
+</div>
+<a routerLink="/foo" routerLinkActive="active">来到foo</a>
+<a routerLink="/login/5" [queryParams]="{name: 'zhangsan'}" routerLinkActive="active">来到login</a>
+
+<router-outlet></router-outlet>

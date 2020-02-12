@@ -1,0 +1,40 @@
+<p>login works!</p>
+<p> login  {{ message }}</p>
+<p [innerHTML] = "message"></p>
+<p [innerHTML] = "'message'"></p>
+<img src="{{imageUrl}}" alt="">
+<img [src]="imageUrl" alt="">
+<img bind-src="imageUrl" alt="">
+
+<button [disabled]="isButtonDisabled">Button</button>
+<p>{{name.split('').reverse().join("-")}}</p>
+
+<p>Heroes:</p>
+<ul>
+  <li [id]="'list-' + hero" *ngFor="let hero of heroes">
+    {{ hero }}
+  </li>
+</ul>
+
+<div *ngFor="let hero of heroes; let i=index">{{i + 1}} - {{hero.name}}</div>
+
+<p *ngIf="heroes.length > 3">There are many heroes!</p>
+
+<div *ngIf = "heroes.length>4;else templateName">
+    有很多英雄
+</div>
+<ng-template #templateName>没有很多英雄</ng-template>
+
+<div [class.hidden]="!isSpecial">Show with class</div>
+<div [class.hidden]="isSpecial">Hide with class</div>
+
+
+<div [style.display]="isSpecial?'block':'none'">Show with class</div>
+<div [style.display]="isSpecial?'none':'block'">Hide with class</div>
+
+<div [ngSwitch]="currentHero">
+    <div *ngSwitchCase="'Windstorm'">Windstorm</div>
+    <div *ngSwitchCase="'Bombasto'">Bombasto</div>
+    <div *ngSwitchCase="'Magneta'">Magneta</div>
+    <div *ngSwitchDefault>Tornado</div>
+  </div>
